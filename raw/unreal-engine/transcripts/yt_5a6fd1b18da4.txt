@@ -1,0 +1,45 @@
+Hi, everyone. This is the start to a series I'll be making on the Character Movement component. In this video, I'm going to cover what the Character Movement component is and why you might need to use it, especially why you might need to extend this class for your Unreal project. I'm also going to cover a high-level outline of what the CMC provides. I've had to learn about the CMC extensively through developing my indie game Astro, which is a multiplayer first-person shooter in Zero Gravity.
+Not shy of novel and difficult movement mechanics. If you're just getting started with a multiplayer project and need client-side prediction and server authority, but can't find any good documentation on the Character Movement component, then this will be the tutorial series for you. I haven't posted a devlog for Astro in a while, as I'm in a period that requires a lot of grinding out systems and it's very little visual progress to show for it, but be assured that progress is being made. Anyway, let's get on to the video.
+The Character Movement component is an actor component which resides on the Unreal Engine Character Base class. It takes in input vectors, which are usually sent from the character, and it uses these to manipulate the transformer of the character. It contains several movement modes, which specify how inputs are handled. The CMC is a good starting point, but the power comes into play when you extend this class into your own custom CMC.
+Here you can create custom movement modes and write functions in your CMC that change how the character moves. For example, state changes like sprinting or events like dashing. If implemented correctly, the CMC should be the sole authority of character position.
+Unfortunately for Blueprint programmers, extending the default Character Movement component requires a lot of C++, and there's no quick workaround for this. So if C++ is off limits for you, I would recommend making a game that has movement very near to the default CMC capabilities.
+So as a rule of thumb for determining if your game needs a custom Character Movement component, I will go over three categories which your game could fall under.
+These are single player or co-op multiplayer, general multiplayer, and games with non-humanoid players. So if you're making a single player or co-op game in Unreal, then you have the most options. For co-op multiplayer games, the main assumption is that you don't care about preventing cheaters. This means the client can have authority over their position.
+If your game has very standard humanoid movement like walking, sprinting, swimming, etc, then simply using the default CMC will probably suffice, since most of the common movement features that are not built into the CMC can easily be implemented by small tweaks and blueprints.
+An example of this will be sprinting, which can be achieved by just changing the max walkspeed. Note that using the small tweaks will only work for offline games.
+If you want to do something more complex, movement like wall running or hang gliding, then you could still put together some hacky methods, such as decreasing gravity while hang gliding, but this is probably going to be a good time to invest early in a custom CMC, since you can easily hit dead ends when trying to push janky solutions to their limits.
+If you're making a general multiplayer game, such as an FPS or an MMO or a battle royale, then the answer is yes, you will definitely need to extend the custom character movement component.
+There are only two cases where a multiplayer game might not need to extend the character movement component. The first is if your game has extremely simple movement and would not need anything other than the default movement mechanics of the base CMC.
+So maybe you're making a multiplayer point and click MMO or something like that. The second is if you have such a complex movement system that it could not possibly be handled by the CMC.
+An example of this might be a truly physics based character, like if your pawn's root component has simulated physics turned on, but I highly recommend staying away from this since to my knowledge has never been done correctly in prior months or even years of investment.
+If your game has a non-humanoid player, such as a tank or a bird, or your character is physics based, then you're in a tricky spot.
+If you're making an offline game, I'd probably say that you can get away with not using the CMC or even the character at all. Just drive your player from the pawn class and make your own movement solution.
+If your game is multiplayer however, then I would definitely recommend using the character and extending the character movement component anyway.
+Even if it doesn't feel like your player fits that model, the benefits provided with the CMC are extremely important.
+The only drawback to using the character base class is that you are fixed with a capsule slider. I suppose that there are cases where this simply would not work.
+If your game has a non-humanoid player, such as a tank or a bird, or your character is physics based, then you're in a tricky spot.
+If you make an offline game, I would probably say that you can get away with not using the CMC or even the character at all.
+You could just drive your player from the pawn class and make your own movement solution.
+If your game is multiplayer, then I recommend using the character and extending the CMC anyway.
+Even if it doesn't feel like your player fits that model, the benefits provided by the CMC are extremely important.
+The only drawback to using the character base class is that you're fixed with a capsule slider.
+But, for example, in the case of a bird, you could get away with this by just setting the half height equal to the radius and you've essentially created a sphere capsule slider.
+Okay, so what does the CMC provide us?
+At the highest level, the character movement component gives you a framework.
+It keeps all your movement logic in one place and gives you a structure to implement your movement mechanics, which in my opinion is excellently designed.
+I would say that the game engine I'm developing has some pretty different and novel movement, yet in all the time I spent creating my custom movement component, I never ran into any design flaws and always felt the unreal system fit my game perfectly.
+Getting into more detail, the next major and indispensable feature of the CMC is that it is server authoritative and client predicted.
+I'll probably make a video going over client side prediction on why you need it, but basically if you're making a multiplayer game, you must have client side prediction.
+A feature which could take you several months to implement on your own, and I'm speaking from experience.
+In addition, there are several features such as root motion compatibility, which allows you to temporarily use root motion animations to control the position of your character.
+There's replay compatibility, which makes character movement captured by the replay system.
+Remote proximity replication just means that non-locally controlled clients positions will be replicated automatically via the CMC.
+Then there's ROV nav movement and ROV avoidance, which is useful if your game has bots which need to move over nav meshes.
+Teleportation is just to add a box fully implemented and networked feature, which is quite a quality of life if you have any teleporting in your game.
+And then of course, there's many more little features that I won't get into, but I'll probably end up covering those in later videos.
+So this is sort of the introduction to a series I'll be doing on an in-depth exploration of the character movement component.
+I'm going to assume that you know C++ and the basics of the under architecture.
+Just a few months ago, I didn't know anything about this major feature of Unreal Engine, and besides the brief articles in the UE4 docs, there's only a couple of YouTube tutorials which struggle to do this vast component justice.
+The main way that I learned about character movement and networking was through painstakingly reading Unreal Engine's source code and posting a lot of reddit questions.
+So I think it's long overdue that I give back to the community and provide a much needed comprehensive guide of the character movement component.
+Thanks for watching and stay tuned for more to come in the series.

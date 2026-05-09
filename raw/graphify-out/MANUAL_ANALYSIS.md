@@ -1,0 +1,55 @@
+# 手工分析依据
+
+## 来源
+- `raw/unreal-engine/slate/github_com_YawLighthouse_UMG-Slate-Compendium.md`
+- `raw/tools/github_com_DayuanJiang_next-ai-draw-io_blob_main_docs_cn_README_CN_md.md`
+- `raw/tools/github_com_winfunc_opcode.md`
+- `raw/tools/github_com_zhukunpenglinyutong_jetbrains-cc-gui.md`
+- `raw/unreal-engine/transcripts/yt_5a6fd1b18da4.txt`
+- `raw/ai-tools/github_com_Donchitos_Claude-Code-Game-Studios.md`
+- `raw/ai-tools/github_com_Yuan-ManX_ai-game-devtools.md`
+- `raw/ai-tools/github_com_pamirtuna_gamestudio-subagents.md`
+- `raw/unity-engine/github_com_SaiTingHu_HTFramework.md`
+- `raw/unity-engine/bilibili_BV1VKRPBTE6H_Unity_motion_interpolation.md`
+- `raw/unity-engine/transcripts/yt_30c3774e422c.txt`
+- `raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
+- `raw/game-design/transcripts/yt_93de2d0474b6.txt`
+
+## 我的判断
+- `focusing_system -> split_screen`：两者在同一份 Unreal UI 资料中相邻出现，但当前抓取文本没有直接定义它们的精确关系，因此标为 `AMBIGUOUS`。
+- `natural_language_diagramming -> unreal_ui_framework`：Next AI Draw.io 的自然语言图表生成能力可以用来结构化表达 Unreal UI Framework 这类知识，因此标为 `INFERRED`。
+- `next_ai_drawio -> umg_slate_compendium`：一个是图表生成工具，一个是结构化 Unreal UI 文档，存在潜在组合工作流，但当前语料没有直接示例，因此标为 `AMBIGUOUS`。
+- `opcode -> jetbrains_cc_gui`：两者都在 Claude Code 之上提供 GUI、会话管理、Agent 或 MCP 能力，因此记为 `INFERRED` 的语义相似关系。
+- `mcp_server_management -> mcp_support_jb`：两者都把 MCP 当成扩展 AI 工作流的关键入口，因此记为 `INFERRED`。
+- `project_session_management -> session_management_jb`：两者都把会话历史、恢复或检索作为核心体验，因此记为 `INFERRED`。
+- `opcode / jetbrains_cc_gui -> claude_code_cli`：它们不是同一层产品，但都围绕 Claude Code CLI 提供更可视化或更集成的入口，因此记为 `INFERRED`。
+- `character_movement_component -> cpp`：转录内容明确提到扩展 Character Movement Component 需要大量 C++，因此这是 `EXTRACTED`。
+- `claude_code_game_studios -> opcode`：两者都把 Claude Code 从单一对话扩展成更组织化的多代理协作工作流，因此记为 `INFERRED`。
+- `claude_code_game_studios -> jetbrains_cc_gui`：两者都在 Claude Code 之上增加层级化协作与命令式工作流，但载体分别是仓库模板和 IDE 插件，因此记为 `INFERRED`。
+- `unreal_specialist -> umg`：Claude Code Game Studios 的 Unreal specialist 显式列出 `UMG/CommonUI`，因此这是 `EXTRACTED`。
+- `ai_game_devtools -> claude_code_game_studios`：一个是游戏 AI 工具总表，一个是面向游戏开发团队编排的 Claude Code 模板，二者都服务于 AI 辅助游戏生产流程，因此记为 `INFERRED`。
+- `world_model_agents -> ai_agents_49`：AI Game DevTools 把 World Model 与 Agent 作为显式分类，而 Claude Code Game Studios 以 49 个代理组织工作室，因此记为 `INFERRED`。
+- `unreal_engine_ai_tools -> unreal_specialist`：前者是 Unreal 相关 AI 工具分类，后者是 Unreal specialist 工作流角色，因此记为 `INFERRED`。
+- `llm_tools -> unity_ai_tools / unreal_engine_ai_tools`：AI Game DevTools 的 `LLM (LLM & Tool)` 分类直接覆盖 Unity 与 Unreal 相关条目，因此这是 `EXTRACTED`。
+- `HTFramework` 不适合归到现有 `tools / ai-tools / unreal-engine`：README 明确将其定义为基于 Unity 的客户端快速开发框架，因此单独归入 `raw/unity-engine`。
+- `htframework -> unity_ai_tools`：前者是 Unity 客户端开发框架，后者是 Unity 生态下的 AI 工具集合，因此这是同一引擎生态下的 `INFERRED` 桥接。
+- `unity_rapid_framework -> hotfix_module_ht / ecs_module_ht / fsm_module_ht / network_client_module_ht / debugger_module_ht`：这些都是 HTFramework README 直接列出的核心模块，因此是 `EXTRACTED`。
+- `bilibili_unity_motion_interpolation` 归类到 `raw/unity-engine`：视频标题包含 Unity，标签包含 `UNITY开发教程`、`运动插值`、`横版相机控制`、`角色3C`，因此这是 Unity 引擎教程资料。
+- `bilibili_unity_motion_interpolation -> unity_motion_interpolation`：视频标题直接指向“Unity-运动插值”，因此这是 `EXTRACTED`。
+- `bilibili_unity_motion_interpolation -> unity_action_game_project`：视频简介直接给出 `DevelopAUnityActionGameIn5Min` 项目仓库，因此这是 `EXTRACTED`。
+- `unity_motion_interpolation -> unity_rapid_framework`：运动插值属于 Unity 角色控制 / 动作游戏开发主题，与 HTFramework 所代表的 Unity 客户端框架处于同一引擎实践层，但当前语料没有显示二者直接调用，因此记为 `INFERRED`。
+- `unity_motion_interpolation -> fixed_update / update_method / late_update / time_scale`：转写明确讨论 `Update`、`FixedUpdate`、`LateUpdate` 与 `TimeScale` 对角色抖动和插值的影响，因此这些关系记为 `EXTRACTED`。
+- `display_layer_interpolation -> animator_display_object / rigidbody_collider_physics_state / camera_follow_target`：转写明确说明只移动显示层物体，保留 `Collider` / `Rigidbody` 等真实物理状态不动，并把相机跟随目标改为显示物体，因此这些关系记为 `EXTRACTED`。
+- `display_layer_interpolation -> character_3c`：视频标签包含 `角色3C`，转写内容围绕角色运动与相机跟随展开，但没有直接给出“3C”定义，因此记为 `INFERRED`。
+- `gamestudio_subagents` 归类到 `raw/ai-tools`：该仓库的核心是基于 Claude Code 的游戏多 Agent 工作流和多引擎开发支持，而不是单一引擎框架，因此更适合归入 `raw/ai-tools`。
+- `gamestudio_subagents -> claude_code_game_studios`：两者都在 Claude Code 上构建“游戏工作室 / 多代理协作”的组织化开发模式，一个偏项目初始化与多引擎支持，一个偏真实工作室层级与工作流技能，因此记为 `INFERRED` 的语义相似关系。
+- `gamestudio_subagents -> claude_code_cli`：README 的 prerequisites 与 quick start 都直接要求安装并调用 Claude Code CLI，因此这是 `EXTRACTED`。
+- `master_orchestrator_gss / producer_agent_gss / market_analyst_gss / specialized_agents_12`：这些都是 Game Studio Sub-Agents README 直接列出的核心角色或能力，因此可以形成新的子代理主题簇。
+- `multi_engine_support_gss -> unity_ai_tools / unreal_engine_ai_tools`：前者显式覆盖 Unity / Unreal / Godot，后者是现有图谱中的引擎向 AI 工具分类，因此我把这类连接记为 `INFERRED` 的生态层桥接，而不是显式工作流调用。
+- `Game Studio Sub-Agents -> Claude Code Game Studios -> opcode / JetBrains CC GUI` 这类路径说明，当前 `raw/ai-tools` 已经同时覆盖“游戏多 Agent 编排”“Claude Code 工具化入口”和“多引擎实战模板”三种相关但不同层级的语料。
+- `bilibili_game_narrative_text_reality_worldview` 归类到 `raw/game-design`：标题和标签指向游戏叙事、文字冒险、游戏创作与游戏文案，转写内容围绕现实世界观下的叙事文本写法，而不是具体引擎技术。
+- `bilibili_game_narrative_text_reality_worldview -> game_narrative_text / reality_worldview_writing / text_adventure_narrative`：标题、标签和转写摘要直接指向这些主题，因此是 `EXTRACTED`。
+- `game_narrative_text -> background_description_minimalism / dialogue_as_character_reveal / inner_speech_writing_method`：转写明确讨论少写空泛背景、用台词暴露人物内心，以及用内部语言跑通逻辑，因此是 `EXTRACTED`。
+- `reality_worldview_writing -> source_accuracy_for_worldbuilding`：转写明确强调现实或历史背景文本要查资料、追溯来源、向专业人士确认，因此是 `EXTRACTED`。
+- `dialogue_as_character_reveal -> inner_speech_writing_method`：两者同属作者给出的叙事文本创作方法，但视频没有直接定义二者的因果或上下位关系，因此记为 `INFERRED`。
+- `game_narrative_text -> gamestudio_subagents`：新增视频偏内容创作方法，Game Studio Sub-Agents 偏游戏生产组织工作流；二者在游戏开发流程中可衔接，但当前语料没有显式工作流示例，因此记为 `INFERRED`。
