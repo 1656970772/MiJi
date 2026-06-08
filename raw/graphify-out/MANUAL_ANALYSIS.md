@@ -15,6 +15,7 @@
 - `raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
 - `raw/game-design/transcripts/yt_93de2d0474b6.txt`
 - `raw/ai-tools/github_com_shitagaki-lab_see-through.md`
+- `raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
 
 ## 我的判断
 - `focusing_system -> split_screen`：两者在同一份 Unreal UI 资料中相邻出现，但当前抓取文本没有直接定义它们的精确关系，因此标为 `AMBIGUOUS`。
@@ -62,3 +63,12 @@
 - `see_through -> ai_game_devtools`：See-through 属于 AI 图像、动画资产和角色素材预处理工具，可并入 AI Game DevTools 的工具景观，但 AI Game DevTools 当前语料没有直接列出该仓库，因此记为 `INFERRED`。
 - `game_character_asset_pipeline -> display_layer_interpolation`：See-through 解决角色资产拆层，Display Layer Interpolation 解决 Unity 角色显示层插值；二者都服务于角色表现链路，但当前语料没有直接调用关系，因此记为 `INFERRED`。
 - `two_point_five_d_models -> character_3c`：See-through 的 2.5D 分层资产可服务于角色表现，Character 3C 是现有 Unity 动作游戏资料中的角色控制主题；这是跨阶段的资产到控制表现关联，因此记为 `INFERRED`。
+- `plotpilot` 归类到 `raw/ai-tools`：README 明确将其定义为剧情引擎内核、长篇 AI 创作基础设施，并通过 FastAPI / Vue / Tauri / SQLite / 向量检索等工程组件提供能力；它不是单篇游戏叙事理论，也不是单一引擎教程，因此归入 AI 工具。
+- `plotpilot -> narrative_engine_kernel / long_form_ai_creation`：README 的“这是什么”和项目 tagline 直接说明 PlotPilot 是 Narrative Engine Kernel，面向长篇 AI 创作基础设施，因此这些关系记为 `EXTRACTED`。
+- `plotpilot -> narrative_state_machine / vector_retrieval_layer / prompt_strategy_layer / quality_monitor`：README 的“内核架构”直接列出五个核心子系统，因此这些关系记为 `EXTRACTED`。
+- `narrative_state_machine -> story_bible / chapter_summary_chain / narrative_event_stream / storyline_dag / foreshadowing_registry`：README 的叙事状态机部分逐项列出这些状态结构，因此这些关系记为 `EXTRACTED`。
+- `engine_daemon -> story_pipeline_runner -> base_story_pipeline`：README 的剧情引擎运行时部分明确说明 EngineDaemon 委托 StoryPipelineRunner，并默认走 BaseStoryPipeline 十步管线，因此这些关系记为 `EXTRACTED`。
+- `quality_monitor -> tension_ecg`：README 的质量监控子系统明确列出张力心电图与张力评分，因此这是 `EXTRACTED`。
+- `plotpilot -> game_narrative_text`：PlotPilot 的长篇叙事状态治理可承接现有游戏叙事文本方法论，但当前游戏叙事文本视频没有直接提到 PlotPilot，因此记为 `INFERRED`。
+- `narrative_state_machine -> game_narrative_text`：PlotPilot 用 Story Bible、DAG、伏笔注册表和事件流结构化叙事文本，这与游戏叙事文本中的人物、因果、伏笔和世界观连续性存在方法层桥接，因此记为 `INFERRED`。
+- `plotpilot -> gamestudio_subagents`：前者是叙事生产内核，后者是游戏开发多 Agent 组织方式；二者可组合为“叙事引擎 + 团队代理工作流”，但当前语料无直接集成，因此记为 `INFERRED`。

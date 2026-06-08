@@ -16,17 +16,18 @@
 - 文档 12：`raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
 - 文档 13：`raw/game-design/transcripts/yt_93de2d0474b6.txt`（Bilibili 转写）
 - 文档 14：`raw/ai-tools/github_com_shitagaki-lab_see-through.md`
+- 文档 15：`raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
 - 关系标注依据详见 `raw/graphify-out/MANUAL_ANALYSIS.md`。
 
 ## Corpus Check
 
-- 17 个文件（14 docs + 3 audio artifacts）
+- 18 个文件（15 docs + 3 audio artifacts）
 - Bilibili 新增资料均已补充 `faster-whisper` 中文转写；转写存在少量近音词和繁简混用。
 
 ## Summary
 
-- 117 nodes / 189 edges / 13 communities detected
-- Extraction: 84% EXTRACTED / 15% INFERRED / 1% AMBIGUOUS
+- 137 nodes / 213 edges / 14 communities detected
+- Extraction: 83% EXTRACTED / 16% INFERRED / 1% AMBIGUOUS
 - Token cost: 0 input / 0 output（本轮为本地转写与手工图谱补充）
 
 ## God Nodes
@@ -34,13 +35,13 @@
 1. `UMG-Slate Compendium` - 14 edges
 2. `Next AI Draw.io` - 13 edges
 3. `See-through` - 13 edges
-4. `opcode` - 10 edges
-5. `Claude Code Game Studios` - 10 edges
-6. `JetBrains CC GUI` - 9 edges
-7. `Game Studio Sub-Agents` - 9 edges
-8. `AI Game DevTools (AI-GDT)` - 8 edges
-9. `HTFramework` - 8 edges
-10. `Unity Motion Interpolation` - 8 edges
+4. `PlotPilot（墨枢）` - 12 edges
+5. `opcode` - 10 edges
+6. `Claude Code Game Studios` - 10 edges
+7. `Game Studio Sub-Agents` - 10 edges
+8. `JetBrains CC GUI` - 9 edges
+9. `AI Game DevTools (AI-GDT)` - 9 edges
+10. `HTFramework` - 8 edges
 
 ## Surprising Connections
 
@@ -66,6 +67,10 @@
   - 我的判断：See-through 属于 AI 图像 / 动画资产预处理工具，可接入 AI Game DevTools 的 Image、Animation、Avatar、3D Model 等工具景观分支。
 - `Game Character Asset Pipeline` --conceptually_related_to--> `Display Layer Interpolation` [INFERRED]
   - 我的判断：See-through 解决角色图层资产拆分，Display Layer Interpolation 解决 Unity 中显示层运动平滑；二者都服务于角色表现资产进入可动展示或游戏运行时的链路。
+- `PlotPilot（墨枢）` --conceptually_related_to--> `Game Narrative Text` [INFERRED]
+  - 我的判断：PlotPilot 是长篇叙事生产系统，Game Narrative Text 是文本表达方法论；二者可形成“叙事方法 -> 自动化生产内核”的桥接。
+- `Narrative State Machine` --structures--> `Game Narrative Text` [INFERRED]
+  - 我的判断：PlotPilot 用 Story Bible、故事线 DAG、伏笔注册表和事件流约束长篇文本，这相当于把游戏叙事文本中的人物、因果、伏笔与世界观连续性工程化。
 
 ## Communities
 
@@ -121,6 +126,10 @@
 
 - Nodes (14): `See-through`, `Anime Character Layer Decomposition`, `2.5D Models`, `23 Semantic Layers`, `PSD Export`, `LayerDiff 3D`, `Marigold Depth`, `Live2D Preprocessing` (+6 more)
 
+### Community 13 - AI Narrative Engine
+
+- Nodes (20): `PlotPilot（墨枢）`, `Narrative Engine Kernel`, `Long-form AI Creation`, `Narrative State Machine`, `Story Bible`, `Chapter Summary Chain`, `Narrative Event Stream`, `Storyline DAG` (+12 more)
+
 ## Suggested Questions
 
 - **现实世界观的游戏叙事文本，如何用台词和行动替代空泛背景描写？**
@@ -141,3 +150,7 @@
   - 新增资料卡记录了它的 23 语义层、PSD 输出、遮挡补全和 Live2D 前处理边界。
 - **See-through 与 Unity Motion Interpolation / Display Layer Interpolation 能否组合成角色立绘动效链路？**
   - 前者负责拆层和 PSD 资产准备，后者代表运行时显示层插值与相机跟随问题，两者可作为“资产生成 -> 运行时表现”的跨阶段对照。
+- **PlotPilot 的 Narrative State Machine 能否作为游戏剧情线 / NPC 叙事线的状态治理参考？**
+  - 新增资料卡记录了 Story Bible、故事线 DAG、伏笔注册表、事件流和章级摘要链，可对照现有游戏叙事文本方法论。
+- **PlotPilot 与 Game Studio Sub-Agents 如何分工？**
+  - PlotPilot 偏叙事生产内核和质量治理，Game Studio Sub-Agents 偏多角色协作组织；两者可能形成“创作引擎 + 生产团队代理”的组合路径。
