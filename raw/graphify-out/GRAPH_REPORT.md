@@ -15,31 +15,32 @@
 - 文档 11：`raw/unity-engine/transcripts/yt_30c3774e422c.txt`（Bilibili 转写）
 - 文档 12：`raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
 - 文档 13：`raw/game-design/transcripts/yt_93de2d0474b6.txt`（Bilibili 转写）
+- 文档 14：`raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 - 关系标注依据详见 `raw/graphify-out/MANUAL_ANALYSIS.md`。
 
 ## Corpus Check
 
-- 16 个文件（13 docs + 3 audio artifacts）
+- 17 个文件（14 docs + 3 audio artifacts）
 - Bilibili 新增资料均已补充 `faster-whisper` 中文转写；转写存在少量近音词和繁简混用。
 
 ## Summary
 
-- 103 nodes / 172 edges / 12 communities detected
-- Extraction: 86% EXTRACTED / 13% INFERRED / 1% AMBIGUOUS
+- 117 nodes / 189 edges / 13 communities detected
+- Extraction: 84% EXTRACTED / 15% INFERRED / 1% AMBIGUOUS
 - Token cost: 0 input / 0 output（本轮为本地转写与手工图谱补充）
 
 ## God Nodes
 
 1. `UMG-Slate Compendium` - 14 edges
 2. `Next AI Draw.io` - 13 edges
-3. `opcode` - 10 edges
-4. `Claude Code Game Studios` - 10 edges
-5. `JetBrains CC GUI` - 9 edges
-6. `HTFramework` - 8 edges
-7. `Game Studio Sub-Agents` - 8 edges
-8. `Unity Motion Interpolation` - 8 edges
-9. `Character Movement Component (CMC)` - 7 edges
-10. `AI Game DevTools (AI-GDT)` - 7 edges
+3. `See-through` - 13 edges
+4. `opcode` - 10 edges
+5. `Claude Code Game Studios` - 10 edges
+6. `JetBrains CC GUI` - 9 edges
+7. `Game Studio Sub-Agents` - 9 edges
+8. `AI Game DevTools (AI-GDT)` - 8 edges
+9. `HTFramework` - 8 edges
+10. `Unity Motion Interpolation` - 8 edges
 
 ## Surprising Connections
 
@@ -61,6 +62,10 @@
   - 我的判断：新增视频偏“游戏内容创作方法”，而 Game Studio Sub-Agents 偏“生产组织工作流”；两者可在游戏开发流程中衔接，但当前语料没有显式协作关系。
 - `Dialogue as Character Reveal` --conceptually_related_to--> `Inner Speech Writing Method` [INFERRED]
   - 我的判断：视频分别讨论台词如何暴露人物内心，以及写作前用内部语言跑通逻辑；二者同属叙事文本创作方法，但不是源文直接定义的上下位关系。
+- `See-through` --conceptually_related_to--> `AI Game DevTools (AI-GDT)` [INFERRED]
+  - 我的判断：See-through 属于 AI 图像 / 动画资产预处理工具，可接入 AI Game DevTools 的 Image、Animation、Avatar、3D Model 等工具景观分支。
+- `Game Character Asset Pipeline` --conceptually_related_to--> `Display Layer Interpolation` [INFERRED]
+  - 我的判断：See-through 解决角色图层资产拆分，Display Layer Interpolation 解决 Unity 中显示层运动平滑；二者都服务于角色表现资产进入可动展示或游戏运行时的链路。
 
 ## Communities
 
@@ -112,6 +117,10 @@
 
 - Nodes (8): `闲聊：游戏的【叙事文本】怎么做？（现实世界观篇）`, `Game Narrative Text`, `Reality Worldview Writing`, `Minimal Background Description`, `Dialogue as Character Reveal`, `Inner Speech Writing Method`, `Source Accuracy for Worldbuilding`, `Text Adventure Narrative`
 
+### Community 12 - AI Character Asset Pipeline
+
+- Nodes (14): `See-through`, `Anime Character Layer Decomposition`, `2.5D Models`, `23 Semantic Layers`, `PSD Export`, `LayerDiff 3D`, `Marigold Depth`, `Live2D Preprocessing` (+6 more)
+
 ## Suggested Questions
 
 - **现实世界观的游戏叙事文本，如何用台词和行动替代空泛背景描写？**
@@ -128,3 +137,7 @@
   - 新增 Unity 动作游戏教程后，Unity 实战资料更多，值得重新审视这条桥接。
 - **Game Studio Sub-Agents 与 Claude Code Game Studios 在实践中应该如何区分？**
   - 它们仍是当前 AI 游戏工作流社区中的核心对照。
+- **See-through 能否作为“单张角色概念图 -> 可动画 PSD 资产”的预处理入口？**
+  - 新增资料卡记录了它的 23 语义层、PSD 输出、遮挡补全和 Live2D 前处理边界。
+- **See-through 与 Unity Motion Interpolation / Display Layer Interpolation 能否组合成角色立绘动效链路？**
+  - 前者负责拆层和 PSD 资产准备，后者代表运行时显示层插值与相机跟随问题，两者可作为“资产生成 -> 运行时表现”的跨阶段对照。

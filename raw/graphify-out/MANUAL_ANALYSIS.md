@@ -14,6 +14,7 @@
 - `raw/unity-engine/transcripts/yt_30c3774e422c.txt`
 - `raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
 - `raw/game-design/transcripts/yt_93de2d0474b6.txt`
+- `raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 
 ## 我的判断
 - `focusing_system -> split_screen`：两者在同一份 Unreal UI 资料中相邻出现，但当前抓取文本没有直接定义它们的精确关系，因此标为 `AMBIGUOUS`。
@@ -53,3 +54,11 @@
 - `reality_worldview_writing -> source_accuracy_for_worldbuilding`：转写明确强调现实或历史背景文本要查资料、追溯来源、向专业人士确认，因此是 `EXTRACTED`。
 - `dialogue_as_character_reveal -> inner_speech_writing_method`：两者同属作者给出的叙事文本创作方法，但视频没有直接定义二者的因果或上下位关系，因此记为 `INFERRED`。
 - `game_narrative_text -> gamestudio_subagents`：新增视频偏内容创作方法，Game Studio Sub-Agents 偏游戏生产组织工作流；二者在游戏开发流程中可衔接，但当前语料没有显式工作流示例，因此记为 `INFERRED`。
+- `see_through` 归类到 `raw/ai-tools`：仓库 README 与 GitHub 描述明确将其定位为动漫角色单图图层分解研究项目，功能面向 AI 图像处理、PSD 资产输出、2.5D 角色资产与 Live2D 前处理，而不是单一游戏引擎教程或画风参考资料。
+- `see_through -> anime_character_layer_decomposition / two_point_five_d_models / semantic_layers_23 / psd_export`：README 的 TL;DR 与 Usage 直接说明单图拆成 2.5D、最多 23 个语义层，并通过主推理脚本输出 PSD，因此这些关系记为 `EXTRACTED`。
+- `see_through -> layerdiff_3d / marigold_depth`：README 的 Models 表明确列出 LayerDiff 3D 用于透明图层生成、Marigold Depth 用于动漫 pseudo-depth estimation，因此这些关系记为 `EXTRACTED`。
+- `see_through -> huggingface_space_demo / modelscope_demo`：README 的 Online Demo 直接提供 Hugging Face Space 与 ModelScope 演示入口，因此这些关系记为 `EXTRACTED`。
+- `see_through -> comfyui_see_through / stretchystudio`：README 的 Community Support 明确列出 ComfyUI-See-through 与 StretchyStudio 等第三方集成，因此这些关系记为 `EXTRACTED`。
+- `see_through -> ai_game_devtools`：See-through 属于 AI 图像、动画资产和角色素材预处理工具，可并入 AI Game DevTools 的工具景观，但 AI Game DevTools 当前语料没有直接列出该仓库，因此记为 `INFERRED`。
+- `game_character_asset_pipeline -> display_layer_interpolation`：See-through 解决角色资产拆层，Display Layer Interpolation 解决 Unity 角色显示层插值；二者都服务于角色表现链路，但当前语料没有直接调用关系，因此记为 `INFERRED`。
+- `two_point_five_d_models -> character_3c`：See-through 的 2.5D 分层资产可服务于角色表现，Character 3C 是现有 Unity 动作游戏资料中的角色控制主题；这是跨阶段的资产到控制表现关联，因此记为 `INFERRED`。
