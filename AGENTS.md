@@ -54,3 +54,11 @@
 - 所有事实性陈述、判断、建议和结论，默认都要提供来源支持，并在回答中明确标注来源。
 - 来源优先使用用户提供材料、当前项目文件、官方文档或明确可核验的资料。
 - 如果某一部分属于基于已有信息的分析、推断或方案设计，必须明确标注为“我的观点”或“我的判断”，并说明依据。
+
+## Graphify 知识图谱规则
+
+- 本项目已有 Graphify 知识图谱，位置为 `raw/graphify-out/`，核心文件包括 `raw/graphify-out/graph.json`、`raw/graphify-out/graph.html` 和 `raw/graphify-out/GRAPH_REPORT.md`。
+- 当用户输入 `/graphify` 或明确要求查询项目知识图谱时，优先使用 Graphify，而不是直接通读 `raw` 目录或全文检索。
+- 对项目资料、架构、知识关系类问题，优先运行 `graphify query "<问题>" --graph raw/graphify-out/graph.json`；查询两个概念关系时使用 `graphify path "<A>" "<B>" --graph raw/graphify-out/graph.json`；聚焦单个概念时使用 `graphify explain "<概念>" --graph raw/graphify-out/graph.json`。
+- `raw/graphify-out/` 出现增量更新后的未提交变更是正常现象，不应因此跳过 Graphify。只有当任务目标是修正过期或错误的图谱输出，或用户明确要求不要使用 Graphify 时，才跳过 Graphify。
+- 只有在 query/path/explain 结果不足，或需要做宏观资料架构审查时，才读取 `raw/graphify-out/GRAPH_REPORT.md`。
