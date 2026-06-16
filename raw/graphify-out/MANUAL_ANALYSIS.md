@@ -17,6 +17,7 @@
 - `raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 - `raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
 - `raw/ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md`
+- `raw/ai-tools/github_com_sparklecatta-lang_sprite-video-lab.md`
 
 ## 我的判断
 - `focusing_system -> split_screen`：两者在同一份 Unreal UI 资料中相邻出现，但当前抓取文本没有直接定义它们的精确关系，因此标为 `AMBIGUOUS`。
@@ -84,3 +85,16 @@
 - `two_d_character_starter -> ai_game_devtools`：它属于 AI 游戏工具景观中的图像、角色和动画素材探索工具，但 AI Game DevTools 当前语料没有直接列出该仓库，因此记为 `INFERRED`。
 - `numeric_subagent_sampling -> gamestudio_subagents`：数字后缀的多 subagent 采样与 Game Studio Sub-Agents 的多 agent 生产组织在方法层相近，但二者不是同一项目或显式集成，因此记为 `INFERRED`。
 - `codex_skill_workflow -> custom_agents_opcode`：2D Character Starter 是 Codex skill 工作流，opcode 的 Custom Agents 是 Claude Code 桌面工具化工作流；二者都服务 agent 能力封装，但当前语料没有直接关系，因此记为 `INFERRED`。
+- `sprite_video_lab` 归类到 `raw/ai-tools`：README 明确将其定义为本地网页工具，用来把视频片段、单张图片或已有序列帧整理成 2D Sprite 资源；它属于 AI / 本地工具链中的角色与特效资产处理工具，而不是单一游戏引擎教程。
+- `sprite_video_lab -> local_web_sprite_tool / two_d_sprite_resource`：README 的首段直接说明 Sprite Video Lab 是本地网页工具，并以整理干净的 2D Sprite 资源为目标，因此这些关系记为 `EXTRACTED`。
+- `sprite_video_lab -> video_gif_image_sequence_import / frame_range_trimming / fixed_interval_frame_sampling`：README 的适合工作流与功能列表明确写明可导入视频、GIF、单图和多图序列帧，支持视频区间预览、按帧起止和固定间隔抽帧，因此这些关系记为 `EXTRACTED`。
+- `sprite_video_lab -> background_removal_pipeline` 以及 `background_removal_pipeline -> chroma_key_background_removal / birefnet_ai_matting / luma_bright_vfx_alpha / corridorkey_edge_refinement`：README 的抠图模式直接列出 chroma key、BiRefNet、Luma、CorridorKey 及其组合方式，因此这些关系记为 `EXTRACTED`。
+- `corridorkey_edge_refinement -> foreground_color_reconstruction`：README 明确说明 CorridorKey 用于绿幕 / 蓝幕边缘精修和前景颜色重建，因此这是 `EXTRACTED`。
+- `sprite_video_lab -> magic_sprite_processing -> real_esrgan_anime_x4 / transparent_png_scales`：README 的 MAGIC 二次处理说明会对处理后帧执行 Real-ESRGAN anime x4 超分，并派生 1/2、1/4、1/8 三档透明 PNG，因此这些关系记为 `EXTRACTED`。
+- `sprite_video_lab -> transparent_webm_export / frames_folder_export`：README 说明可导出 frames 文件夹和自动时间命名的透明 WebM，因此这些关系记为 `EXTRACTED`。
+- `sprite_video_lab -> line_cleaner_experiment / ffmpeg_frame_pipeline`：README 记录实验性线稿清理页，并把 ffmpeg / ffprobe 列为环境要求，因此这些关系记为 `EXTRACTED`。
+- `sprite_video_lab -> two_d_character_starter`：2D Character Starter 生成或修正绿幕角色起始素材，Sprite Video Lab 可处理动态图、序列帧、alpha、透明 WebM 和 frames 导出；二者处在相邻资产工作流，但当前两个仓库没有直接集成关系，因此记为 `INFERRED`。
+- `sprite_video_lab -> game_character_asset_pipeline`：Sprite Video Lab 把视频、GIF、单图或序列帧整理为透明 Sprite 资源，适合进入角色资产生产线的帧处理与透明化阶段，因此记为 `INFERRED`。
+- `sprite_video_lab -> see_through`：See-through 偏单张角色图拆层和 PSD / Live2D 前处理，Sprite Video Lab 偏视频、GIF 和序列帧处理；两者同属角色视觉资产前处理，但目标产物不同，因此记为 `INFERRED`。
+- `sprite_video_lab -> ai_game_devtools`：它属于 AI 游戏工具景观中的图像、Sprite 和动画素材处理工具，但 AI Game DevTools 当前语料没有直接列出该仓库，因此记为 `INFERRED`。
+- `sprite_video_lab -> display_layer_interpolation`：Sprite Video Lab 产出帧序列或透明 WebM，可服务运行时角色 / 特效表现；Display Layer Interpolation 代表 Unity 运行时显示层平滑问题，这是资产准备到运行时表现的跨阶段联系，因此记为 `INFERRED`。

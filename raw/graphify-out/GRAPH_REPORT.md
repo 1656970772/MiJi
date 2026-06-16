@@ -18,31 +18,32 @@
 - 文档 14：`raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 - 文档 15：`raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
 - 文档 16：`raw/ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md`
+- 文档 17：`raw/ai-tools/github_com_sparklecatta-lang_sprite-video-lab.md`
 - 关系标注依据详见 `raw/graphify-out/MANUAL_ANALYSIS.md`。
 
 ## Corpus Check
 
-- 19 个文件（16 docs + 3 audio artifacts）
+- 20 个文件（17 docs + 3 audio artifacts）
 - Bilibili 新增资料均已补充 `faster-whisper` 中文转写；转写存在少量近音词和繁简混用。
 
 ## Summary
 
-- 150 nodes / 234 edges / 15 communities detected
+- 170 nodes / 260 edges / 16 communities detected
 - Extraction: 82% EXTRACTED / 17% INFERRED / 1% AMBIGUOUS
 - Token cost: 0 input / 0 output（本轮为本地转写与手工图谱补充）
 
 ## God Nodes
 
-1. `UMG-Slate Compendium` - 14 edges
-2. `See-through` - 14 edges
-3. `2D Character Starter` - 14 edges
-4. `Next AI Draw.io` - 13 edges
-5. `PlotPilot（墨枢）` - 12 edges
-6. `Game Studio Sub-Agents` - 11 edges
-7. `opcode` - 10 edges
-8. `Claude Code Game Studios` - 10 edges
-9. `AI Game DevTools (AI-GDT)` - 10 edges
-10. `JetBrains CC GUI` - 9 edges
+1. `Sprite Video Lab` - 17 edges
+2. `See-through` - 15 edges
+3. `2D Character Starter` - 15 edges
+4. `UMG-Slate Compendium` - 14 edges
+5. `Next AI Draw.io` - 13 edges
+6. `PlotPilot（墨枢）` - 12 edges
+7. `Game Studio Sub-Agents` - 11 edges
+8. `AI Game DevTools (AI-GDT)` - 11 edges
+9. `opcode` - 10 edges
+10. `Claude Code Game Studios` - 10 edges
 
 ## Surprising Connections
 
@@ -78,6 +79,12 @@
   - 我的判断：两者都服务 2D 角色资产链路，但前者偏生成、简化、姿势与动作方向探索，后者偏单图拆层、遮挡补全和 PSD / Live2D 前处理。
 - `Numeric Subagent Sampling` --conceptually_related_to--> `Game Studio Sub-Agents` [INFERRED]
   - 我的判断：2D Character Starter 的数字后缀是同模式多 subagent 独立采样，Game Studio Sub-Agents 是游戏生产组织层的多 agent 体系；二者同属多 agent 生产工作流，但不是同一项目。
+- `Sprite Video Lab` --feeds--> `Game Character Asset Pipeline` [INFERRED]
+  - 我的判断：Sprite Video Lab 把视频、GIF、单图或序列帧整理为透明 Sprite 资源，处于“素材进入游戏前”的视频 / 帧处理和透明化阶段。
+- `Sprite Video Lab` --conceptually_related_to--> `2D Character Starter` [INFERRED]
+  - 我的判断：2D Character Starter 生成或修正绿幕角色起始素材，Sprite Video Lab 可继续处理动态图、抽帧、alpha、透明 WebM 和 frames 导出；两者是相邻资产工作流，不是直接依赖。
+- `Sprite Video Lab` --conceptually_related_to--> `Display Layer Interpolation` [INFERRED]
+  - 我的判断：Sprite Video Lab 产出的帧序列或透明 WebM 可服务运行时角色 / 特效表现，而 Display Layer Interpolation 代表 Unity 运行时显示层平滑问题；这是资产准备到运行时表现的跨阶段联系。
 
 ## Communities
 
@@ -141,6 +148,10 @@
 
 - Nodes (13): `2D Character Starter`, `Codex Skill Workflow`, `2D Playable Character Image Generation`, `Chroma Green Screen Output`, `3:2 Character Canvas`, `Character Simplification Mode`, `Concept Target Style Transfer`, `Strict Pose Transfer` (+5 more)
 
+### Community 15 - Sprite Video Processing Pipeline
+
+- Nodes (20): `Sprite Video Lab`, `Local Web Sprite Tool`, `2D Sprite Resource`, `Video/GIF/Image/Sequence Import`, `Frame Range Trimming`, `Fixed Interval Frame Sampling`, `Background Removal Pipeline`, `Chroma Key Background Removal` (+12 more)
+
 ## Suggested Questions
 
 - **现实世界观的游戏叙事文本，如何用台词和行动替代空泛背景描写？**
@@ -169,3 +180,7 @@
   - 新增资料卡记录了 `s`、`ct`、`p`、`sq`、`cs` 五类产图模式，可用于角色简化、画风迁移、姿势迁移、单帧动作方向探索和绿幕待机角色生成。
 - **2D Character Starter 与 See-through 应如何分工？**
   - 2D Character Starter 偏生成和修正角色起始素材，See-through 偏把已有角色图拆成可编辑 PSD / Live2D 前处理层，两者可组成“起始素材生成 -> 拆层与动画预处理”的链路。
+- **Sprite Video Lab 能否补上“动态图 / 视频素材 -> 游戏 Sprite”的处理段？**
+  - 新增资料卡记录了视频区间截取、固定间隔抽帧、绿幕 / AI 抠图、Luma 亮部 VFX 保留、MAGIC 二次处理和透明 WebM 导出。
+- **Sprite Video Lab、2D Character Starter、See-through 如何串成角色资产链路？**
+  - 2D Character Starter 负责起始角色素材生成和姿势探索，Sprite Video Lab 负责动态图 / 序列帧透明化与导出，See-through 负责单图拆层和 PSD / Live2D 前处理。
