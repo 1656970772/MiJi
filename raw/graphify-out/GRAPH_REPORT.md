@@ -17,31 +17,32 @@
 - 文档 13：`raw/game-design/transcripts/yt_93de2d0474b6.txt`（Bilibili 转写）
 - 文档 14：`raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 - 文档 15：`raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
+- 文档 16：`raw/ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md`
 - 关系标注依据详见 `raw/graphify-out/MANUAL_ANALYSIS.md`。
 
 ## Corpus Check
 
-- 18 个文件（15 docs + 3 audio artifacts）
+- 19 个文件（16 docs + 3 audio artifacts）
 - Bilibili 新增资料均已补充 `faster-whisper` 中文转写；转写存在少量近音词和繁简混用。
 
 ## Summary
 
-- 137 nodes / 213 edges / 14 communities detected
-- Extraction: 83% EXTRACTED / 16% INFERRED / 1% AMBIGUOUS
+- 150 nodes / 234 edges / 15 communities detected
+- Extraction: 82% EXTRACTED / 17% INFERRED / 1% AMBIGUOUS
 - Token cost: 0 input / 0 output（本轮为本地转写与手工图谱补充）
 
 ## God Nodes
 
 1. `UMG-Slate Compendium` - 14 edges
-2. `Next AI Draw.io` - 13 edges
-3. `See-through` - 13 edges
-4. `PlotPilot（墨枢）` - 12 edges
-5. `opcode` - 10 edges
-6. `Claude Code Game Studios` - 10 edges
-7. `Game Studio Sub-Agents` - 10 edges
-8. `JetBrains CC GUI` - 9 edges
-9. `AI Game DevTools (AI-GDT)` - 9 edges
-10. `HTFramework` - 8 edges
+2. `See-through` - 14 edges
+3. `2D Character Starter` - 14 edges
+4. `Next AI Draw.io` - 13 edges
+5. `PlotPilot（墨枢）` - 12 edges
+6. `Game Studio Sub-Agents` - 11 edges
+7. `opcode` - 10 edges
+8. `Claude Code Game Studios` - 10 edges
+9. `AI Game DevTools (AI-GDT)` - 10 edges
+10. `JetBrains CC GUI` - 9 edges
 
 ## Surprising Connections
 
@@ -71,6 +72,12 @@
   - 我的判断：PlotPilot 是长篇叙事生产系统，Game Narrative Text 是文本表达方法论；二者可形成“叙事方法 -> 自动化生产内核”的桥接。
 - `Narrative State Machine` --structures--> `Game Narrative Text` [INFERRED]
   - 我的判断：PlotPilot 用 Story Bible、故事线 DAG、伏笔注册表和事件流约束长篇文本，这相当于把游戏叙事文本中的人物、因果、伏笔与世界观连续性工程化。
+- `2D Character Starter` --conceptually_related_to--> `Game Character Asset Pipeline` [INFERRED]
+  - 我的判断：2D Character Starter 生成 / 修正绿幕可游玩角色起始素材，适合放在角色资产管线的早期探索环节；当前现有资料没有直接把该 skill 纳入 See-through 管线，因此标为推断。
+- `2D Character Starter` --conceptually_related_to--> `See-through` [INFERRED]
+  - 我的判断：两者都服务 2D 角色资产链路，但前者偏生成、简化、姿势与动作方向探索，后者偏单图拆层、遮挡补全和 PSD / Live2D 前处理。
+- `Numeric Subagent Sampling` --conceptually_related_to--> `Game Studio Sub-Agents` [INFERRED]
+  - 我的判断：2D Character Starter 的数字后缀是同模式多 subagent 独立采样，Game Studio Sub-Agents 是游戏生产组织层的多 agent 体系；二者同属多 agent 生产工作流，但不是同一项目。
 
 ## Communities
 
@@ -130,6 +137,10 @@
 
 - Nodes (20): `PlotPilot（墨枢）`, `Narrative Engine Kernel`, `Long-form AI Creation`, `Narrative State Machine`, `Story Bible`, `Chapter Summary Chain`, `Narrative Event Stream`, `Storyline DAG` (+12 more)
 
+### Community 14 - AI Character Skill Workflow
+
+- Nodes (13): `2D Character Starter`, `Codex Skill Workflow`, `2D Playable Character Image Generation`, `Chroma Green Screen Output`, `3:2 Character Canvas`, `Character Simplification Mode`, `Concept Target Style Transfer`, `Strict Pose Transfer` (+5 more)
+
 ## Suggested Questions
 
 - **现实世界观的游戏叙事文本，如何用台词和行动替代空泛背景描写？**
@@ -154,3 +165,7 @@
   - 新增资料卡记录了 Story Bible、故事线 DAG、伏笔注册表、事件流和章级摘要链，可对照现有游戏叙事文本方法论。
 - **PlotPilot 与 Game Studio Sub-Agents 如何分工？**
   - PlotPilot 偏叙事生产内核和质量治理，Game Studio Sub-Agents 偏多角色协作组织；两者可能形成“创作引擎 + 生产团队代理”的组合路径。
+- **2D Character Starter 能否作为“角色概念图 -> 可测试绿幕角色素材”的入口？**
+  - 新增资料卡记录了 `s`、`ct`、`p`、`sq`、`cs` 五类产图模式，可用于角色简化、画风迁移、姿势迁移、单帧动作方向探索和绿幕待机角色生成。
+- **2D Character Starter 与 See-through 应如何分工？**
+  - 2D Character Starter 偏生成和修正角色起始素材，See-through 偏把已有角色图拆成可编辑 PSD / Live2D 前处理层，两者可组成“起始素材生成 -> 拆层与动画预处理”的链路。

@@ -16,6 +16,7 @@
 - `raw/game-design/transcripts/yt_93de2d0474b6.txt`
 - `raw/ai-tools/github_com_shitagaki-lab_see-through.md`
 - `raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
+- `raw/ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md`
 
 ## 我的判断
 - `focusing_system -> split_screen`：两者在同一份 Unreal UI 资料中相邻出现，但当前抓取文本没有直接定义它们的精确关系，因此标为 `AMBIGUOUS`。
@@ -72,3 +73,14 @@
 - `plotpilot -> game_narrative_text`：PlotPilot 的长篇叙事状态治理可承接现有游戏叙事文本方法论，但当前游戏叙事文本视频没有直接提到 PlotPilot，因此记为 `INFERRED`。
 - `narrative_state_machine -> game_narrative_text`：PlotPilot 用 Story Bible、DAG、伏笔注册表和事件流结构化叙事文本，这与游戏叙事文本中的人物、因果、伏笔和世界观连续性存在方法层桥接，因此记为 `INFERRED`。
 - `plotpilot -> gamestudio_subagents`：前者是叙事生产内核，后者是游戏开发多 Agent 组织方式；二者可组合为“叙事引擎 + 团队代理工作流”，但当前语料无直接集成，因此记为 `INFERRED`。
+- `two_d_character_starter` 归类到 `raw/ai-tools`：README 明确将其定位为给 Codex 使用的 2D 可游玩角色图像生成/修正 skill，核心是 AI 图像与角色资产工作流，而不是单一游戏引擎教程或画风参考资料。
+- `two_d_character_starter -> codex_skill_workflow / two_d_playable_character_generation`：README 直接说明该仓库是给 Codex 使用的 skill，目标是快速得到适合继续测试、筛选和迭代的 2D 可游玩角色起始素材，因此这些关系记为 `EXTRACTED`。
+- `two_d_character_starter -> chroma_green_screen_output / three_two_character_canvas`：README 的默认输出规则明确写明所有产图模式默认 `3:2` 画幅、纯绿幕背景、单角色优先、不在图片里写文字标签，因此这些关系记为 `EXTRACTED`。
+- `two_d_character_starter -> character_simplification_mode / concept_target_style_transfer / strict_pose_transfer / single_frame_action_generation / concept_simplify_idle_generation`：README 的模式总览直接列出 `s`、`ct`、`p`、`sq`、`cs` 五类产图模式，因此这些关系记为 `EXTRACTED`。
+- `two_d_character_starter -> semantic_output_naming`：README 与 SKILL.md 都强调多图输出按语义顺序命名，并以文件名和回复顺序作为权威，因此这是 `EXTRACTED`。
+- `two_d_character_starter -> numeric_subagent_sampling`：README 与 SKILL.md 都说明除 `h/help` 外产图模式可加数字后缀，让多个 subagent 使用相同输入和模式独立采样，因此这是 `EXTRACTED`。
+- `two_d_character_starter -> game_character_asset_pipeline`：2D Character Starter 生成/修正绿幕角色起始素材，适合进入角色资产生产线的早期探索环节；这是对现有角色资产管线节点的工作流桥接，因此记为 `INFERRED`。
+- `two_d_character_starter -> see_through`：两者都服务 2D 角色资产链路，但 2D Character Starter 偏生成、简化、姿势和动作方向探索，See-through 偏拆层、遮挡补全和 PSD / Live2D 前处理；当前两个仓库没有互相引用，因此记为 `INFERRED`。
+- `two_d_character_starter -> ai_game_devtools`：它属于 AI 游戏工具景观中的图像、角色和动画素材探索工具，但 AI Game DevTools 当前语料没有直接列出该仓库，因此记为 `INFERRED`。
+- `numeric_subagent_sampling -> gamestudio_subagents`：数字后缀的多 subagent 采样与 Game Studio Sub-Agents 的多 agent 生产组织在方法层相近，但二者不是同一项目或显式集成，因此记为 `INFERRED`。
+- `codex_skill_workflow -> custom_agents_opcode`：2D Character Starter 是 Codex skill 工作流，opcode 的 Custom Agents 是 Claude Code 桌面工具化工作流；二者都服务 agent 能力封装，但当前语料没有直接关系，因此记为 `INFERRED`。
