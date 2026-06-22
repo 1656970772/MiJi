@@ -1,186 +1,336 @@
-# Graph Report - raw
-
-## 来源
-
-- 文档 1：`raw/unreal-engine/slate/github_com_YawLighthouse_UMG-Slate-Compendium.md`
-- 文档 2：`raw/tools/github_com_DayuanJiang_next-ai-draw-io_blob_main_docs_cn_README_CN_md.md`
-- 文档 3：`raw/tools/github_com_winfunc_opcode.md`
-- 文档 4：`raw/tools/github_com_zhukunpenglinyutong_jetbrains-cc-gui.md`
-- 文档 5：`raw/unreal-engine/transcripts/yt_5a6fd1b18da4.txt`（YouTube 转写）
-- 文档 6：`raw/ai-tools/github_com_Donchitos_Claude-Code-Game-Studios.md`
-- 文档 7：`raw/ai-tools/github_com_Yuan-ManX_ai-game-devtools.md`
-- 文档 8：`raw/ai-tools/github_com_pamirtuna_gamestudio-subagents.md`
-- 文档 9：`raw/unity-engine/github_com_SaiTingHu_HTFramework.md`
-- 文档 10：`raw/unity-engine/bilibili_BV1VKRPBTE6H_Unity_motion_interpolation.md`
-- 文档 11：`raw/unity-engine/transcripts/yt_30c3774e422c.txt`（Bilibili 转写）
-- 文档 12：`raw/game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md`
-- 文档 13：`raw/game-design/transcripts/yt_93de2d0474b6.txt`（Bilibili 转写）
-- 文档 14：`raw/ai-tools/github_com_shitagaki-lab_see-through.md`
-- 文档 15：`raw/ai-tools/github_com_shenminglinyi_PlotPilot.md`
-- 文档 16：`raw/ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md`
-- 文档 17：`raw/ai-tools/github_com_sparklecatta-lang_sprite-video-lab.md`
-- 关系标注依据详见 `raw/graphify-out/MANUAL_ANALYSIS.md`。
+# Graph Report - raw  (2026-06-22)
 
 ## Corpus Check
-
-- 20 个文件（17 docs + 3 audio artifacts）
-- Bilibili 新增资料均已补充 `faster-whisper` 中文转写；转写存在少量近音词和繁简混用。
+- cluster-only mode — file stats not available
 
 ## Summary
+- 945 nodes · 987 edges · 54 communities (48 shown, 6 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 45 edges (avg confidence: 0.72)
+- Token cost: 0 input · 0 output
 
-- 170 nodes / 260 edges / 16 communities detected
-- Extraction: 82% EXTRACTED / 17% INFERRED / 1% AMBIGUOUS
-- Token cost: 0 input / 0 output（本轮为本地转写与手工图谱补充）
+## Graph Freshness
+- Built from commit: `cc5057b0`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
-## God Nodes
+## Community Hubs (Navigation)
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
+- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 20|Community 20]]
+- [[_COMMUNITY_Community 21|Community 21]]
+- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 53|Community 53]]
+- [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
+- [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
 
-1. `Sprite Video Lab` - 17 edges
-2. `See-through` - 15 edges
-3. `2D Character Starter` - 15 edges
-4. `UMG-Slate Compendium` - 14 edges
-5. `Next AI Draw.io` - 13 edges
-6. `PlotPilot（墨枢）` - 12 edges
-7. `Game Studio Sub-Agents` - 11 edges
-8. `AI Game DevTools (AI-GDT)` - 11 edges
-9. `opcode` - 10 edges
-10. `Claude Code Game Studios` - 10 edges
+## God Nodes (most connected - your core abstractions)
+1. `Game Studio Sub-Agents` - 21 edges
+2. `Sprite Video Lab` - 17 edges
+3. `UE5 Shader 调试工具 Microsoft PIX 资料卡` - 15 edges
+4. `See-through` - 15 edges
+5. `2D Character Starter` - 15 edges
+6. `GOBT：面向 NPC 行为的混合 AI 算法资料卡` - 14 edges
+7. `关键章节摘要` - 14 edges
+8. `UE5 PanelCloth 布料系统资料卡` - 14 edges
+9. `UMG-Slate Compendium` - 14 edges
+10. `RenderDoc AI 工作流资料卡` - 13 edges
 
-## Surprising Connections
+## Surprising Connections (you probably didn't know these)
+- `opcode` --semantically_similar_to--> `Claude Code Game Studios`  [INFERRED] [semantically similar]
+  tools/github_com_winfunc_opcode.md → ai-tools/github_com_Donchitos_Claude-Code-Game-Studios.md
+- `Codex Skill Workflow` --conceptually_related_to--> `Custom Agents`  [INFERRED]
+  ai-tools/github_com_sparklecatta-lang_2D-Character-Starter.md → tools/github_com_winfunc_opcode.md
+- `Custom Agents` --semantically_similar_to--> `Studio Hierarchy`  [INFERRED] [semantically similar]
+  tools/github_com_winfunc_opcode.md → ai-tools/github_com_Donchitos_Claude-Code-Game-Studios.md
+- `Game Narrative Text` --conceptually_related_to--> `Game Studio Sub-Agents`  [INFERRED]
+  game-design/bilibili_BV1f8dMBFEy2_game_narrative_text_reality_worldview.md → ai-tools/github_com_pamirtuna_gamestudio-subagents.md
+- `UMG-Slate Compendium` --conceptually_related_to--> `Next AI Draw.io`  [AMBIGUOUS]
+  unreal-engine/slate/github_com_YawLighthouse_UMG-Slate-Compendium.md → tools/github_com_DayuanJiang_next-ai-draw-io_blob_main_docs_cn_README_CN_md.md
 
-- `Unity Motion Interpolation` --conceptually_related_to--> `Unity Rapid Development Framework` [INFERRED]
-  - 基于同属 Unity 角色控制 / 客户端开发实践层的判断；当前语料没有直接调用关系。
-- `DevelopAUnityActionGameIn5Min` --conceptually_related_to--> `HTFramework` [INFERRED]
-  - 一个是 Unity 动作游戏教程项目，一个是 Unity 客户端快速开发框架；这是生态层关联，不是源码依赖。
-- `Display Layer Interpolation` --conceptually_related_to--> `Horizontal Camera Control` [EXTRACTED]
-  - 转写明确说明插值显示物体的位置，并把相机跟随目标改为显示物体，用来缓解角色抖动。
-- `Display Layer Interpolation` --conceptually_related_to--> `Character 3C` [INFERRED]
-  - 视频标签含 `角色3C`，转写内容围绕角色运动与相机跟随展开，因此这是控制器实践层的推断关联。
-- `Claude Code Game Studios` --semantically_similar_to--> `opcode` [INFERRED]
-  - inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; semantically similar concepts with no structural link
-- `UMG-Slate Compendium` --conceptually_related_to--> `Next AI Draw.io` [AMBIGUOUS]
-  - ambiguous connection - not explicitly stated in source; connects across different repos/directories
-- `HTFramework` --conceptually_related_to--> `Unity AI Tools` [INFERRED]
-  - 同属 Unity 生态资料，但当前语料没有显式工作流示例。
-- `Game Narrative Text` --conceptually_related_to--> `Game Studio Sub-Agents` [INFERRED]
-  - 我的判断：新增视频偏“游戏内容创作方法”，而 Game Studio Sub-Agents 偏“生产组织工作流”；两者可在游戏开发流程中衔接，但当前语料没有显式协作关系。
-- `Dialogue as Character Reveal` --conceptually_related_to--> `Inner Speech Writing Method` [INFERRED]
-  - 我的判断：视频分别讨论台词如何暴露人物内心，以及写作前用内部语言跑通逻辑；二者同属叙事文本创作方法，但不是源文直接定义的上下位关系。
-- `See-through` --conceptually_related_to--> `AI Game DevTools (AI-GDT)` [INFERRED]
-  - 我的判断：See-through 属于 AI 图像 / 动画资产预处理工具，可接入 AI Game DevTools 的 Image、Animation、Avatar、3D Model 等工具景观分支。
-- `Game Character Asset Pipeline` --conceptually_related_to--> `Display Layer Interpolation` [INFERRED]
-  - 我的判断：See-through 解决角色图层资产拆分，Display Layer Interpolation 解决 Unity 中显示层运动平滑；二者都服务于角色表现资产进入可动展示或游戏运行时的链路。
-- `PlotPilot（墨枢）` --conceptually_related_to--> `Game Narrative Text` [INFERRED]
-  - 我的判断：PlotPilot 是长篇叙事生产系统，Game Narrative Text 是文本表达方法论；二者可形成“叙事方法 -> 自动化生产内核”的桥接。
-- `Narrative State Machine` --structures--> `Game Narrative Text` [INFERRED]
-  - 我的判断：PlotPilot 用 Story Bible、故事线 DAG、伏笔注册表和事件流约束长篇文本，这相当于把游戏叙事文本中的人物、因果、伏笔与世界观连续性工程化。
-- `2D Character Starter` --conceptually_related_to--> `Game Character Asset Pipeline` [INFERRED]
-  - 我的判断：2D Character Starter 生成 / 修正绿幕可游玩角色起始素材，适合放在角色资产管线的早期探索环节；当前现有资料没有直接把该 skill 纳入 See-through 管线，因此标为推断。
-- `2D Character Starter` --conceptually_related_to--> `See-through` [INFERRED]
-  - 我的判断：两者都服务 2D 角色资产链路，但前者偏生成、简化、姿势与动作方向探索，后者偏单图拆层、遮挡补全和 PSD / Live2D 前处理。
-- `Numeric Subagent Sampling` --conceptually_related_to--> `Game Studio Sub-Agents` [INFERRED]
-  - 我的判断：2D Character Starter 的数字后缀是同模式多 subagent 独立采样，Game Studio Sub-Agents 是游戏生产组织层的多 agent 体系；二者同属多 agent 生产工作流，但不是同一项目。
-- `Sprite Video Lab` --feeds--> `Game Character Asset Pipeline` [INFERRED]
-  - 我的判断：Sprite Video Lab 把视频、GIF、单图或序列帧整理为透明 Sprite 资源，处于“素材进入游戏前”的视频 / 帧处理和透明化阶段。
-- `Sprite Video Lab` --conceptually_related_to--> `2D Character Starter` [INFERRED]
-  - 我的判断：2D Character Starter 生成或修正绿幕角色起始素材，Sprite Video Lab 可继续处理动态图、抽帧、alpha、透明 WebM 和 frames 导出；两者是相邻资产工作流，不是直接依赖。
-- `Sprite Video Lab` --conceptually_related_to--> `Display Layer Interpolation` [INFERRED]
-  - 我的判断：Sprite Video Lab 产出的帧序列或透明 WebM 可服务运行时角色 / 特效表现，而 Display Layer Interpolation 代表 Unity 运行时显示层平滑问题；这是资产准备到运行时表现的跨阶段联系。
+## Import Cycles
+- None detected.
 
-## Communities
+## Hyperedges (group relationships)
+- **Unreal UI 主题群** — umg, slate, performance_design, widget_components, input_framework, focusing_system, split_screen [EXTRACTED 1.00]
+- **Next AI Draw.io 核心能力** — next_ai_drawio, natural_language_diagramming, drawio_integration, mcp_server, claude_code_cli, multi_provider_support [EXTRACTED 1.00]
+- **opcode 核心能力** — opcode, project_session_management, custom_agents_opcode, background_agents, mcp_server_management, usage_analytics, claude_md_management [EXTRACTED 1.00]
+- **JetBrains CC GUI 核心能力** — jetbrains_cc_gui, intellij_idea_plugin, dual_ai_engine_support, built_in_agent_system, mcp_support_jb, session_management_jb [EXTRACTED 1.00]
+- **Character Movement 系列核心主题** — cmc_series, character_movement_component, custom_cmc, multiplayer_movement, client_side_prediction, server_authority, default_cmc, non_humanoid_players [EXTRACTED 1.00]
+- **Game Studio Sub-Agents Core** — gamestudio_subagents, specialized_agents_12, multi_engine_support_gss, automatic_project_structure, master_orchestrator_gss, producer_agent_gss, market_analyst_gss [EXTRACTED 1.00]
+- **Unity Action Game Motion Topics** — bilibili_unity_motion_interpolation, unity_motion_interpolation, horizontal_camera_control, character_3c, unity_action_game_project [EXTRACTED 1.00]
+- **Unity Motion Interpolation Transcript Topics** — unity_motion_interpolation, fixed_update, update_method, late_update, time_scale, display_layer_interpolation, camera_follow_target, animator_display_object, rigidbody_collider_physics_state [EXTRACTED 1.00]
+- **Game Narrative Text / Reality Worldview Topics** — bilibili_game_narrative_text_reality_worldview, game_narrative_text, reality_worldview_writing, background_description_minimalism, dialogue_as_character_reveal, inner_speech_writing_method, source_accuracy_for_worldbuilding, text_adventure_narrative [EXTRACTED 1.00]
+- **See-through 核心能力** — see_through, anime_character_layer_decomposition, two_point_five_d_models, semantic_layers_23, psd_export, layerdiff_3d, marigold_depth, live2d_preprocessing [EXTRACTED 1.00]
+- **PlotPilot 剧情引擎核心子系统** — plotpilot, narrative_engine_kernel, narrative_state_machine, vector_retrieval_layer, engine_daemon, prompt_strategy_layer, quality_monitor [EXTRACTED 1.00]
+- **2D Character Starter 核心模式** — two_d_character_starter, codex_skill_workflow, two_d_playable_character_generation, character_simplification_mode, concept_target_style_transfer, strict_pose_transfer, single_frame_action_generation, concept_simplify_idle_generation, numeric_subagent_sampling [EXTRACTED 1.00]
+- **Sprite Video Lab Sprite 处理管线** — sprite_video_lab, video_gif_image_sequence_import, frame_range_trimming, fixed_interval_frame_sampling, background_removal_pipeline, magic_sprite_processing, transparent_webm_export, frames_folder_export [EXTRACTED 1.00]
+- **韩立早期修仙叙事核心** — fanren_xiuxianzhuan_han_li, fanren_xiuxianzhuan_shancun_qiongxiaozi, fanren_xiuxianzhuan_qixuanmen, fanren_xiuxianzhuan_jianghu_menpai, fanren_xiuxianzhuan_xiuxianjie, fanren_xiuxianzhuan_xiao_lv_ping, fanren_xiuxianzhuan_jinshen_qiusheng, fanren_xiuxianzhuan_xiuzhenjie [EXTRACTED 1.00]
 
-### Community 0 - Unreal UMG / Slate Topics
+## Communities (54 total, 6 thin omitted)
 
-- Nodes (12): `UMG-Slate Compendium`, `Unreal Engine UI Framework`, `UMG`, `Slate`, `Performance & Design Considerations`, `Widget Components`, `Input Framework of Unreal Engine`, `Unreal Focusing System` (+4 more)
+### Community 0 - "Community 0"
+Cohesion: 0.10
+Nodes (33): Blueprint, Character Movement Component (CMC), Client-side Prediction, Cloud Architecture Diagrams, Unreal Engine | Character Movement Component: In-Depth, C++, Custom Character Movement Component, UMG/Slate Debug Tools (+25 more)
 
-### Community 1 - AI Diagram Generation
+### Community 1 - "Community 1"
+Cohesion: 0.07
+Nodes (27): 1. 单 pass 汇总, 1. 整体管线, 1. 超级 shader 与分支, 2. ARRI LogC3 + LUT, 2. GBuffer 与雨晴切换, 2. 基色与表情图集, 3. Bloom 与暗角, 3. 菲尼尔假次表面 (+19 more)
 
-- Nodes (11): `Next AI Draw.io`, `Natural Language Diagramming`, `draw.io Integration`, `Image and PDF Uploads`, `Cloud Architecture Diagrams`, `Multi-provider Support`, `Next.js`, `Vercel AI SDK` (+3 more)
+### Community 2 - "Community 2"
+Cohesion: 0.07
+Nodes (26): 1. Chaos Cloth Asset, 1. Material Section 分区带来的割裂, 1. 穿插的主要原因, 2. Dataflow 节点图, 2. 权重绘制与反馈周期, 2. 碰撞体简化, 3. PBD / XPBD 与约束, 3. 自碰撞预算 (+18 more)
 
-### Community 2 - Unreal Character Movement
+### Community 3 - "Community 3"
+Cohesion: 0.06
+Nodes (49): 49 AI Agents, AI Code Tools, AI Game DevTools (AI-GDT), AI Team Structure, Development Modes, Development Workflow, Engine-Specific Positioning, Game Studio Sub-Agents (+41 more)
 
-- Nodes (10): `Blueprint`, `C++`, `Unreal Engine | Character Movement Component: In-Depth`, `Character Movement Component (CMC)`, `Custom Character Movement Component`, `Multiplayer Movement`, `Client-side Prediction`, `Server Authority` (+2 more)
+### Community 4 - "Community 4"
+Cohesion: 0.08
+Nodes (24): 1. Marvelous Designer 的角色, 1. 文章描述的能力, 1. 网格优化, 2. 官方文档能确认的部分, 2. 材质与纹理, 2. 静态模型流程, 3. 动画缓存流程, 3. 绑定与姿势测试 (+16 more)
 
-### Community 3 - Claude Code Desktop Tooling
+### Community 5 - "Community 5"
+Cohesion: 0.08
+Nodes (23): 1. 三层模型假设, 2. 从内搭顶点投影到裸模, 3. 投影点烘焙, 4. 外套三角形粗筛, 5. Möller-Trumbore 精筛, 6. CPU 计算，GPU 应用, 一句话结论, 刚体平移和平滑 (+15 more)
 
-- Nodes (6): `opcode`, `Project and Session Management`, `Custom Agents`, `Background Execution`, `Usage Analytics Dashboard`, `Tauri 2`
+### Community 6 - "Community 6"
+Cohesion: 0.09
+Nodes (22): 10. 寻路、RVO 与行为树, 11. 数据配置与通用业务, 12. 分布式场景与无缝迁移, 13. libclang 自动代码生成, 1. 服务端架构演进, 2. Mosaic Game 的进程生命周期, 3. 玩家与场景生命周期, 4. 网络通信与连接管理 (+14 more)
 
-### Community 4 - Tool Integration and MCP
+### Community 7 - "Community 7"
+Cohesion: 0.09
+Nodes (21): 1. 开源帧同步战斗系统（高效索敌）, 2. 战斗系统的预表现设计, 3. 开源帧同步战斗系统（零章）, 4. 帧同步中的操作指令二, 5. 帧同步中的操作指令一, 6. 放置系统&流场寻路, 7. 帧同步一致性问题解决方案, 8. 双端可序列化的行为树 (+13 more)
 
-- Nodes (4): `MCP Server`, `Claude Code CLI`, `MCP Server Management`, `CLAUDE.md Management`
+### Community 8 - "Community 8"
+Cohesion: 0.17
+Nodes (13): 彩霞山, 凡人修仙传, 韩老魔, 韩立, 江湖门派, 谨慎求生, 七玄门, 三界 (+5 more)
 
-### Community 5 - JetBrains Plugin Workflow
+### Community 10 - "Community 10"
+Cohesion: 0.11
+Nodes (27): Animator Display Object, Camera Follow Target, Character 3C, Debugger Module, Display Layer Interpolation, ECS Module, FixedUpdate, FSM Module (+19 more)
 
-- Nodes (4): `JetBrains CC GUI`, `IntelliJ IDEA Plugin`, `Permission and Security Controls`, `Session Management`
+### Community 11 - "Community 11"
+Cohesion: 0.07
+Nodes (33): Minimal Background Description, BaseStoryPipeline, Chapter Summary Chain, Dialogue as Character Reveal, EngineDaemon, FastAPI REST API, Foreshadowing Registry, 我的判断 (+25 more)
 
-### Community 6 - JetBrains Agent Features
+### Community 12 - "Community 12"
+Cohesion: 0.09
+Nodes (21): 1. 为什么 UEFN 要引入 Scene Graph, 2. Entity：刻意保持空白的容器, 3. Component：能力的最小组合单位, 4. Prefab：结构、组件和行为一起复用, 5. Verse：Scene Graph 稳定性的语言基础, 6. 核心示例：按组件查询场景实体, 7. 样例关卡：移动平台从 device 管理变为实体自驱, 8. 组件化思维与中心管理思维的边界 (+13 more)
 
-- Nodes (3): `Built-in Agent System`, `Slash Command System`, `MCP Support`
+### Community 14 - "Community 14"
+Cohesion: 0.09
+Nodes (21): 1. AddSource 外力项, 1. 拉格朗日与欧拉视角, 2. Diffuse 扩散项, 2. Stable Fluids 四项, 3. Advect 平流项, 3. Niagara 基础搭建, 4. Project 投射项, 5. 边界与跟随角色 (+13 more)
 
-### Community 7 - JetBrains AI Support
+### Community 15 - "Community 15"
+Cohesion: 0.05
+Nodes (47): Animation Frame Exploration, Anime Character Layer Decomposition, Background Removal Pipeline, BiRefNet AI Matting, Canvas Normalization, Character Simplification Mode, Chroma Green Screen Output, Chroma Key Background Removal (+39 more)
 
-- Nodes (3): `Dual AI Engine Support`, `Claude Code Support`, `OpenAI Codex Support`
+### Community 16 - "Community 16"
+Cohesion: 0.10
+Nodes (20): 1. 单标签色换色, 1. 放弃纯 AI 染色出图, 2. 基于调色盘的实时 ReColor, 2. 多标签色混合, 3. 颜色聚类, 3D 虚拟服装程序化上色资料卡, 4. 色彩空间选择, 5. 自动确定色块数 K (+12 more)
 
-### Community 8 - Claude Code Game Studio
+### Community 17 - "Community 17"
+Cohesion: 0.10
+Nodes (20): 1. 为什么不用传统 Actor 堆单位, 2. 架构主线：Niagara as Compute, 3. CPU / GPU 数据交换：数组与 Render Target, 4. 选择与移动：让粒子可交互, 5. Neighbor Grid 3D：局部邻居查询, 6. 位打包：用有限通道表达更多状态, 7. 距离场战争迷雾, 8. 性能结果与证据边界 (+12 more)
 
-- Nodes (13): `Claude Code Game Studios`, `49 AI Agents`, `72 Workflow Skills`, `Studio Hierarchy`, `Unreal Engine 5`, `Unreal Specialist`, `Game Studio Sub-Agents`, `12 Specialized Agents` (+5 more)
+### Community 18 - "Community 18"
+Cohesion: 0.10
+Nodes (20): FMeshBatch, FMeshDrawCommand, FMeshPassProcessor, FPassProcessorManager, Mesh Relevance, Submit, UE 网格体绘制管线资料卡, UWorld、FScene 与 Proxy (+12 more)
 
-### Community 9 - AI Game Dev Tool Landscape
+### Community 19 - "Community 19"
+Cohesion: 0.10
+Nodes (20): Shader 实现入口, Shader 类体系, UE Shader 与材质系统资料卡, 不适合场景, 作者附带图源, 后续检索关键词, 外部可核验来源, 文章结构 (+12 more)
 
-- Nodes (7): `AI Game DevTools (AI-GDT)`, `LLM Tools`, `World Model & Agents`, `AI Code Tools`, `Multimodal Asset Tools`, `Unity AI Tools`, `Unreal Engine AI Tools`
+### Community 20 - "Community 20"
+Cohesion: 0.10
+Nodes (19): 1. Two Bone IK 能解决什么, 2. Two Bone IK 不能解决什么, 3. Basic IK 与 Control Rig, 4. 步态算法, 5. 身体自适应, 6. 性能判断, UE5 蜘蛛多足程序化动画资料卡, 一句话结论 (+11 more)
 
-### Community 10 - Unity Client and Motion Control
+### Community 21 - "Community 21"
+Cohesion: 0.10
+Nodes (19): 1. 固定动画与变化世界的冲突, 2. 核心公式：original + correction, 3. Warp 窗口：只在关键区间扭动画, 4. alpha 曲线：线性不是总是好选择, 5. 极限：Motion Warping 不是魔法, 6. 多 SyncPoint：跨越动作的真实形态, Motion Warping 原理可视化资料卡, UE5 实战对应 (+11 more)
 
-- Nodes (22): `HTFramework`, `Unity Rapid Development Framework`, `Hotfix Module`, `ECS Module`, `FSM Module`, `Network Client Module`, `Debugger Module`, `5分钟完全了解Unity-运动插值` (+14 more)
+### Community 22 - "Community 22"
+Cohesion: 0.10
+Nodes (19): 10. Reward Track 案例：小而专的 VM 粒度, 1. ViewModel 的定位：不要把代码绑死在 Widget 上, 2. Fortnite 生产案例：同一份 VM 驱动多个 View, 3. ViewModel 的获取方式：重点理解生命周期与所有权, 4. 绑定方式：Direct Binding、Custom Function、Conversion Function, 5. 最大陷阱：多值绑定只绑了一个值, 6. 绑定方向与反向通信, 7. VM 可以作为 UI 状态总线 (+11 more)
 
-### Community 11 - Game Narrative and Text Writing
+### Community 23 - "Community 23"
+Cohesion: 0.11
+Nodes (18): 1. 外层：Behavior Tree, 2. 中层：Planner Node, 3. 内层：GOAP 式动作规划, 4. 实时选择：Utility System, GOBT：面向 NPC 行为的混合 AI 算法资料卡, 一句话定位, 不适合直接套用的场景, 决策流程抽象 (+10 more)
 
-- Nodes (8): `闲聊：游戏的【叙事文本】怎么做？（现实世界观篇）`, `Game Narrative Text`, `Reality Worldview Writing`, `Minimal Background Description`, `Dialogue as Character Reveal`, `Inner Speech Writing Method`, `Source Accuracy for Worldbuilding`, `Text Adventure Narrative`
+### Community 24 - "Community 24"
+Cohesion: 0.11
+Nodes (18): 1. 法线空间选择, 2. 取绝对法线并找主导轴, 3. 只构造一组最终 UV, 4. Mesh UV0 的缩放补偿, 5. 为什么要在片元阶段计算遮罩, UE 落地方式, 不适合场景, 与传统三面映射的区别 (+10 more)
 
-### Community 12 - AI Character Asset Pipeline
+### Community 25 - "Community 25"
+Cohesion: 0.11
+Nodes (18): 1. 标准 Alpha Blending 为什么会错, 2. WBOIT 的加权平均, 3. 累积 Pass, 4. Revealage, 5. Composite 合成, WBOIT 顺序无关透明渲染资料卡, 一句话结论, 不适合 (+10 more)
 
-- Nodes (14): `See-through`, `Anime Character Layer Decomposition`, `2.5D Models`, `23 Semantic Layers`, `PSD Export`, `LayerDiff 3D`, `Marigold Depth`, `Live2D Preprocessing` (+6 more)
+### Community 26 - "Community 26"
+Cohesion: 0.11
+Nodes (18): FRunnable 与 FRunnableThread, Game Thread 到 Render Thread, Render Thread 到 RHI Thread, UE 渲染多线程资料卡, 不适合场景, 任务系统, 作者附带图源, 后续检索关键词 (+10 more)
 
-### Community 13 - AI Narrative Engine
+### Community 27 - "Community 27"
+Cohesion: 0.11
+Nodes (18): DDC, Pass, PSO, RDG, RHI, UE 渲染学习开篇预览资料卡, 不适合场景, 作者附带图源 (+10 more)
 
-- Nodes (20): `PlotPilot（墨枢）`, `Narrative Engine Kernel`, `Long-form AI Creation`, `Narrative State Machine`, `Story Bible`, `Chapter Summary Chain`, `Narrative Event Stream`, `Storyline DAG` (+12 more)
+### Community 28 - "Community 28"
+Cohesion: 0.11
+Nodes (18): 1. 准备环境, 2. 启动程序并截帧, 3. 先看整体绘制流程, 4. 再定位单物体, 5. 再分析 Pipeline State, 6. Shader 分析要先 VS 后 FS, 7. 注意色彩空间, 8. 辅助工具 (+10 more)
 
-### Community 14 - AI Character Skill Workflow
+### Community 29 - "Community 29"
+Cohesion: 0.11
+Nodes (17): AOI系统, Buff, MMO技能系统序章资料卡, 与 UE 和 Unity 的迁移, 为什么作者提 War3 和 Dota2, 动画, 后续检索关键词, 外部可核验来源 (+9 more)
 
-- Nodes (13): `2D Character Starter`, `Codex Skill Workflow`, `2D Playable Character Image Generation`, `Chroma Green Screen Output`, `3:2 Character Canvas`, `Character Simplification Mode`, `Concept Target Style Transfer`, `Strict Pose Transfer` (+5 more)
+### Community 30 - "Community 30"
+Cohesion: 0.12
+Nodes (16): 1. 效果展示, 2. 自动导入 Unity, 3. MCP 的作用, RenderDoc AI 工作流资料卡, RenderDoc MCP 安装要点, Unity MCP 安装要点, 一句话结论, 不适合直接相信什么 (+8 more)
 
-### Community 15 - Sprite Video Processing Pipeline
+### Community 31 - "Community 31"
+Cohesion: 0.12
+Nodes (16): 1. 资产治理：让问题尽量不要进入主干, 2. 资产审计：把 Asset Audit 与 Statistics 合成行动表, 3. 性能热点图：先回答“看哪里”, 4. 可复现测试：锁位置、锁朝向、锁变量, 5. 第一层瓶颈判断：stat unit 决定下一把工具, 6. CPU 深挖：Unreal Insights 先看连续低帧, 7. GPU 深挖：ProfileGPU 顺着最大色块下钻, 8. 跨团队交接：证据完整比结论绝对正确更重要 (+8 more)
 
-- Nodes (20): `Sprite Video Lab`, `Local Web Sprite Tool`, `2D Sprite Resource`, `Video/GIF/Image/Sequence Import`, `Frame Range Trimming`, `Fixed Interval Frame Sampling`, `Background Removal Pipeline`, `Chroma Key Background Removal` (+12 more)
+### Community 32 - "Community 32"
+Cohesion: 0.12
+Nodes (15): 1. 输入层, 2. 指令层, 3. 激活层, 4. 技能层与结束, 不适合场景, 动作游戏指令系统资料卡, 可迁移的设计模板, 后续检索关键词 (+7 more)
+
+### Community 33 - "Community 33"
+Cohesion: 0.12
+Nodes (15): 1. RGB10A2 Stencil：角色与场景像素级区分, 2. 后处理 Fog：避免 SSAO 压暗雾色, 3. SubPass / FrameBuffer Fetch：合并后处理、透明与部分材质, 4. 低配版 HDR 管线：从 PrePass 到 Tone Mapping 尽量留在一个 Render Pass, 不适合场景, 后续检索关键词, 外部可核验来源, 实战启发 (+7 more)
+
+### Community 34 - "Community 34"
+Cohesion: 0.12
+Nodes (15): UE 延迟渲染管线流程资料卡, 不适合场景, 作者附带图源, 先读帧入口, 再读 Renderer, 再读 Viewport Draw, 可迁移的阅读路线, 后续检索关键词 (+7 more)
+
+### Community 35 - "Community 35"
+Cohesion: 0.12
+Nodes (15): DX12 Pipeline 名词, PIX 捕获流程, UE5 Shader 调试工具 Microsoft PIX 资料卡, UE5 侧准备, 不适合场景, 与 RenderDoc 的关系, 可迁移清单, 后续检索关键词 (+7 more)
+
+### Community 36 - "Community 36"
+Cohesion: 0.14
+Nodes (13): Ability-Kit 通用技能/战斗系统资料卡, README 要点, Unity UPM 安装注意, 不适合场景, 与 Unreal GAS 的关系, 仓库结构事实, 后续检索关键词, 我的判断 (+5 more)
+
+### Community 37 - "Community 37"
+Cohesion: 0.14
+Nodes (13): GitHub - SaiTingHu/HTFramework: Unity HTFramework, a rapid development framework of client based on Unity - GitHub, Unity HTFramework, 主要特性, 使用方法, 其他特性, 内置工具, 文档与博客, 模块简介 (+5 more)
+
+### Community 38 - "Community 38"
+Cohesion: 0.14
+Nodes (13): UE 渲染源码修改资料导航卡, UE 源码修改方向, 与已有资料卡的关系, 使用路线, 原文链接清单, 后续检索关键词, 外部可核验来源, 文章结构 (+5 more)
+
+### Community 39 - "Community 39"
+Cohesion: 0.15
+Nodes (12): 14 个内置服务（Plugin 视角）, BDFFZI/Alife 资料卡：基于 .NET / C# 的可扩展 AI 桌宠 Agent 框架, 一句话结论, 与本工作区已有资源的连接, 我没确认的事, 我的判断, 来源事实, 架构层次 (+4 more)
+
+### Community 40 - "Community 40"
+Cohesion: 0.15
+Nodes (12): mosaic_game 分布式大世界游戏服务端资料卡, 不适合用途, 仓库定位, 仓库结构事实, 代码生成与运行事实, 后续检索关键词, 我的判断, 服务角色事实 (+4 more)
+
+### Community 41 - "Community 41"
+Cohesion: 0.15
+Nodes (12): README 要点, References 目录, Unreal Engine 5 C++ Expert Skills 资料卡, 不适合用途, 仓库结构事实, 代表性文件抽样, 十个主题支柱, 后续检索关键词 (+4 more)
+
+### Community 42 - "Community 42"
+Cohesion: 0.17
+Nodes (11): Notable Signals For Graph Extraction, shenminglinyi/PlotPilot 资料卡：长篇 AI 创作的剧情引擎内核, 与现有知识库的连接, 五个核心子系统, 叙事状态管理, 后续可搜索关键词, 我的判断, 技术边界 (+3 more)
+
+### Community 43 - "Community 43"
+Cohesion: 0.17
+Nodes (11): UEBridgeMCP 仓库资料卡, 不适合用途, 仓库定位, 后续检索关键词, 工具面与工作流要点, 我的判断, 插件描述文件事实, 来源 (+3 more)
+
+### Community 44 - "Community 44"
+Cohesion: 0.18
+Nodes (10): Notable Signals For Graph Extraction, sparklecatta-lang/2D-Character-Starter 资料卡：Codex 2D 可游玩角色图像生成与修正 Skill, 与现有知识库的连接, 主要模式, 后续可搜索关键词, 我的判断, 数字后缀与 subagent 采样, 来源事实 (+2 more)
+
+### Community 45 - "Community 45"
+Cohesion: 0.18
+Nodes (10): MAGIC 二次处理, Notable Signals For Graph Extraction, sparklecatta-lang/sprite-video-lab 资料卡：本地 2D Sprite 视频与序列帧处理工具, 与现有知识库的连接, 主要工作流, 后续可搜索关键词, 我的判断, 抠图与透明化能力 (+2 more)
+
+### Community 46 - "Community 46"
+Cohesion: 0.20
+Nodes (9): Dan Milligan 分镜画风参考, 关键词, 图片资料, 本地参考图索引, 来源, 检索提示, 正文要点, 画风参考价值 (+1 more)
+
+### Community 47 - "Community 47"
+Cohesion: 0.25
+Nodes (7): GDQuest Learn GDScript From Zero：零基础 GDScript 交互学习应用, 与现有资料的连接, 内容概览, 后续可搜索关键词, 我的判断, 来源, 适合解决的问题
+
+### Community 48 - "Community 48"
+Cohesion: 0.25
+Nodes (7): Godot Learning：首页与 Godot 4 学习站总览, 与现有资料的连接, 内容概览, 后续可搜索关键词, 我的判断, 来源, 适合解决的问题
+
+### Community 49 - "Community 49"
+Cohesion: 0.25
+Nodes (7): Godot Learning - Learning Hub：Godot 4 交互学习中心, 与现有资料的连接, 内容概览, 后续可搜索关键词, 我的判断, 来源, 适合解决的问题
+
+## Ambiguous Edges - Review These
+- `UMG-Slate Compendium` → `Next AI Draw.io`  [AMBIGUOUS]
+  graphify-out/MANUAL_ANALYSIS.md · relation: conceptually_related_to
+- `Unreal Focusing System` → `Split Screen`  [AMBIGUOUS]
+  graphify-out/MANUAL_ANALYSIS.md · relation: conceptually_related_to
+
+## Knowledge Gaps
+- **683 isolated node(s):** `来源事实`, `核心定位`, `架构层次`, `14 个内置服务（Plugin 视角）`, `核心问题` (+678 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
 
-- **现实世界观的游戏叙事文本，如何用台词和行动替代空泛背景描写？**
-  - 新增视频给出了一条从“少写背景”到“让台词暴露人物内心”的写法链条。
-- **游戏文本创作者如何用 Inner Speech 先跑通人物动机和事件逻辑？**
-  - 转写明确把内部语言作为避免前后矛盾、积累关键表达和再查资料补细节的方法。
-- **Unity Motion Interpolation 与 HTFramework / Unity 客户端框架资料之间能形成什么学习路径？**
-  - 新增视频让 Unity 社区从“框架模块”延伸到“角色运动手感 / 动作游戏控制”。
-- **Unity 的 Update / FixedUpdate / LateUpdate 节奏如何影响相机跟随抖动？**
-  - Bilibili 转写已经提供了一个从问题成因到显示层插值实现的教程链条。
-- **DevelopAUnityActionGameIn5Min 项目仓库是否值得单独抓取进图谱？**
-  - 视频简介显式给出 GitHub 仓库；当前已添加视频资料卡与转写，但尚未抓取仓库源码或 README。
-- **HTFramework -> Unity AI Tools -> Multi-Engine Support -> Game Studio Sub-Agents 这条跨引擎路径是否仍成立？**
-  - 新增 Unity 动作游戏教程后，Unity 实战资料更多，值得重新审视这条桥接。
-- **Game Studio Sub-Agents 与 Claude Code Game Studios 在实践中应该如何区分？**
-  - 它们仍是当前 AI 游戏工作流社区中的核心对照。
-- **See-through 能否作为“单张角色概念图 -> 可动画 PSD 资产”的预处理入口？**
-  - 新增资料卡记录了它的 23 语义层、PSD 输出、遮挡补全和 Live2D 前处理边界。
-- **See-through 与 Unity Motion Interpolation / Display Layer Interpolation 能否组合成角色立绘动效链路？**
-  - 前者负责拆层和 PSD 资产准备，后者代表运行时显示层插值与相机跟随问题，两者可作为“资产生成 -> 运行时表现”的跨阶段对照。
-- **PlotPilot 的 Narrative State Machine 能否作为游戏剧情线 / NPC 叙事线的状态治理参考？**
-  - 新增资料卡记录了 Story Bible、故事线 DAG、伏笔注册表、事件流和章级摘要链，可对照现有游戏叙事文本方法论。
-- **PlotPilot 与 Game Studio Sub-Agents 如何分工？**
-  - PlotPilot 偏叙事生产内核和质量治理，Game Studio Sub-Agents 偏多角色协作组织；两者可能形成“创作引擎 + 生产团队代理”的组合路径。
-- **2D Character Starter 能否作为“角色概念图 -> 可测试绿幕角色素材”的入口？**
-  - 新增资料卡记录了 `s`、`ct`、`p`、`sq`、`cs` 五类产图模式，可用于角色简化、画风迁移、姿势迁移、单帧动作方向探索和绿幕待机角色生成。
-- **2D Character Starter 与 See-through 应如何分工？**
-  - 2D Character Starter 偏生成和修正角色起始素材，See-through 偏把已有角色图拆成可编辑 PSD / Live2D 前处理层，两者可组成“起始素材生成 -> 拆层与动画预处理”的链路。
-- **Sprite Video Lab 能否补上“动态图 / 视频素材 -> 游戏 Sprite”的处理段？**
-  - 新增资料卡记录了视频区间截取、固定间隔抽帧、绿幕 / AI 抠图、Luma 亮部 VFX 保留、MAGIC 二次处理和透明 WebM 导出。
-- **Sprite Video Lab、2D Character Starter、See-through 如何串成角色资产链路？**
-  - 2D Character Starter 负责起始角色素材生成和姿势探索，Sprite Video Lab 负责动态图 / 序列帧透明化与导出，See-through 负责单图拆层和 PSD / Live2D 前处理。
+- **What is the exact relationship between `UMG-Slate Compendium` and `Next AI Draw.io`?**
+  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
+- **What is the exact relationship between `Unreal Focusing System` and `Split Screen`?**
+  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
+- **Why does `AI Game DevTools (AI-GDT)` connect `Community 3` to `Community 11`, `Community 15`?**
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `Sprite Video Lab` connect `Community 15` to `Community 10`, `Community 3`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Are the 4 inferred relationships involving `Game Studio Sub-Agents` (e.g. with `Claude Code Game Studios` and `Game Narrative Text`) actually correct?**
+  _`Game Studio Sub-Agents` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 5 inferred relationships involving `Sprite Video Lab` (e.g. with `AI Game DevTools (AI-GDT)` and `Display Layer Interpolation`) actually correct?**
+  _`Sprite Video Lab` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `See-through` (e.g. with `AI Game DevTools (AI-GDT)` and `Sprite Video Lab`) actually correct?**
+  _`See-through` has 3 INFERRED edges - model-reasoned connections that need verification._
